@@ -5,6 +5,7 @@ A selection of common use config blocks for Nginx web server. Tested against Ngi
 - [denyhtaccess.conf](#denyhtaccessconf)
 - [forwardslash.conf](#forwardslashconf)
 - [multislashremove.conf](#multislashremoveconf)
+- [phpfastcgi.conf](#phpfastcgiconf)
 - [releasecssjs.conf](#releasecssjsconf)
 - [releasecssjsexpires.conf](#releasecssjsexpiresconf)
 - [removewww.conf](#removewwwconf)
@@ -16,13 +17,20 @@ Location block to deny access to Git related files and directories. Will 404 any
 Location block to 404 error any requests matching an Apache web server `.htaccess` directory level configuration file.
 
 ## forwardslash.conf
-If condition used inside a location block to ensure all requested URL paths end with a trailing forward slash. Will 301 redirect all path requests without a trailing slash.
+If condition used inside a location block to ensure all requested URL paths end with a trailing forward slash, with a 301 redirect otherwise.
 
 ## multislashremove.conf
-If condition used inside a location block to redirect all URL paths with multiple sequences of forward slashes, with a 301 redirect.
+If condition used inside a location block to redirect all URL paths containing multiple sequences of forward slashes, with a 301 redirect.
+
+## phpfastcgi.conf
+Passing PHP script requests to a FastCGI backend (e.g. PHP-FPM). Works in tandem with `phpfastcgiparam.conf`, which defines Nginx FastCGI settings.
 
 ## releasecssjs.conf
-Rewrite rule for 'cache busting' requests to CSS/JavaScript documents back to their root/source document. The 16 digit hash might be randomly generated on app deploy, or even better taken from the Git SHA1 app release/tag.
+Rewrite rule for 'cache busting' requests to CSS/JavaScript documents back to their root/source document.
+
+The 16 digit hash examples (below) could be either:
+- Randomly generated upon deploy
+- Taken/derived from the Git SHA1 application release
 
 For example:
 ```
