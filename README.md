@@ -1,5 +1,5 @@
 # Nginx config snippets collection
-A selection of common use config blocks for Nginx web server. Tested against Nginx 1.6.1.
+A selection of common use config blocks for Nginx web server. Tested against Nginx 1.6.2.
 
 - [denygit.conf](#denygitconf)
 - [denyhtaccess.conf](#denyhtaccessconf)
