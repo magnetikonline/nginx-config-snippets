@@ -4,6 +4,7 @@ A selection of common use config blocks for Nginx web server. Tested against Ngi
 - [denygit.conf](#denygitconf)
 - [denyhtaccess.conf](#denyhtaccessconf)
 - [forwardslash.conf](#forwardslashconf)
+- [frontcontroller.conf](#frontcontrollerconf)
 - [multislashremove.conf](#multislashremoveconf)
 - [phpfastcgi.conf](#phpfastcgiconf)
 - [releasecssjs.conf](#releasecssjsconf)
@@ -18,6 +19,9 @@ Location block to 404 error any requests matching an Apache web server `.htacces
 
 ## forwardslash.conf
 If condition used inside a location block to ensure all requested URL paths end with a trailing forward slash, with a 301 redirect otherwise.
+
+## frontcontroller.conf
+Example of a internal rewrite rule to route any request not to a file (e.g. a fullstop followed by 2-4 characters `[a-z0-9]`) to an `index.php` script in the document root.
 
 ## multislashremove.conf
 If condition used inside a location block to redirect all URL paths containing multiple sequences of forward slashes, with a 301 redirect.
