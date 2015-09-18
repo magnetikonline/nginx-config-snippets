@@ -12,29 +12,29 @@ A selection of common use config blocks for Nginx web server. Tested against Ngi
 - [removewww.conf](#removewwwconf)
 
 ## denygit.conf
-Location block to deny access to Git related files and directories. Will 404 any request made to a matching file/path pattern.
+[denygit.conf](conf/denygit.conf) location block to deny access to Git related files and directories. Will 404 any request made to a matching file/path pattern.
 
 ## denyhtaccess.conf
-Location block to 404 error any requests matching an Apache web server `.htaccess` directory level configuration file.
+[denyhtaccess.conf](conf/denyhtaccess.conf) location block to 404 error any requests matching an Apache web server `.htaccess` directory level configuration file.
 
 ## forwardslash.conf
-An `if` condition used inside a location block to ensure all requested URL paths end with a trailing forward slash, with a 301 redirect otherwise.
+[forwardslash.conf](conf/forwardslash.conf) is an `if` condition for use inside a location block to ensure all requested URL paths end with a trailing forward slash, with a 301 redirect otherwise.
 
 ## frontcontroller.conf
-Example of a internal rewrite rule to route any request not to a file (e.g. a fullstop followed by 2-4 characters `[a-z0-9]`) to an `index.php` script in the document root.
+[frontcontroller.conf](conf/frontcontroller.conf) an example of a internal rewrite rule to route any request not to a file (e.g. a fullstop followed by 2-4 characters `[a-z0-9]`) to an `index.php` script in the document root.
 
 ## multislashremove.conf
-An `if` condition used inside a location block to redirect URL paths containing multiple sequences of forward slashes, with a 301 redirect.
+[multislashremove.conf](conf/multislashremove.conf) is an `if` condition for use inside a location block to redirect URL paths containing multiple sequences of forward slashes, with a 301 redirect.
 
 ## phpfastcgi.conf
-Passing PHP script requests to a FastCGI backend (e.g. PHP-FPM). Works in tandem with `phpfastcgiparam.conf`, which defines Nginx FastCGI settings.
+[phpfastcgi.conf](conf/phpfastcgi.conf) passes PHP script requests to a FastCGI backend - such as [PHP-FPM](http://php.net/manual/en/install.fpm.php). Works in tandem with [phpfastcgiparam.conf](conf/phpfastcgiparam.conf), which defines Nginx FastCGI settings.
 
 ## releasecssjs.conf
-Rewrite rule for 'cache busting' requests to CSS/JavaScript documents back to their root/source document.
+[releasecssjs.conf](conf/releasecssjs.conf) rewrite rule for 'cache busting' requests to CSS/JavaScript documents back to their root/source document.
 
 The 16 digit hash examples (below) could be either:
-- Randomly generated upon deploy
-- Taken/derived from the Git SHA1 application release
+- Randomly generated upon deploy.
+- Derived from the Git SHA1 application release.
 
 For example:
 ```
@@ -46,7 +46,7 @@ Rewrite: /js/app.js
 ```
 
 ## releasecssjsexpires.conf
-Same as `releasecssjs.conf` above, but written as a location block with a 30 day expires window for the requested file.
+[releasecssjsexpires.conf](conf/releasecssjsexpires.conf) is an extension to [releasecssjs.conf](#releasecssjsconf), written as a location block with a 30 day `Expires` / `Cache-Control: max-age=SECONDS` window for the requested file.
 
 ## removewww.conf
-A template for the recommeded Nginx way of handling redirects of `http://www.domain.com` to `http://domain.com`.
+[removewww.conf](conf/removewww.conf) is a template for the recommeded Nginx way of handling redirects in the style of `http://www.domain.com/URI_PATH` to `http://domain.com/URI_PATH`.
