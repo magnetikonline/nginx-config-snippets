@@ -27,7 +27,7 @@ A selection of common use config blocks for Nginx web server. Tested against Ngi
 [`multislashremove.conf`](conf/multislashremove.conf) is an `if` condition for use inside a location block to redirect URL paths containing multiple sequences of forward slashes, with a 301 redirect.
 
 ## phpfastcgi.conf
-[`phpfastcgi.conf`](conf/phpfastcgi.conf) passes PHP script requests to a FastCGI backend - such as [PHP-FPM](http://php.net/manual/en/install.fpm.php). Works in tandem with [`phpfastcgiparam.conf`](conf/phpfastcgiparam.conf), which defines Nginx FastCGI settings.
+[`phpfastcgi.conf`](conf/phpfastcgi.conf) passes PHP script requests to a FastCGI backend - such as [PHP-FPM](https://secure.php.net/manual/en/install.fpm.php). Works in tandem with [`phpfastcgiparam.conf`](conf/phpfastcgiparam.conf), which defines Nginx FastCGI settings.
 
 ## releasecssjs.conf
 [`releasecssjs.conf`](conf/releasecssjs.conf) rewrite rule for 'cache busting' requests to CSS/JavaScript resources back to their canonical source.
