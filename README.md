@@ -46,6 +46,7 @@ The 16 digit hash examples (below) could be either:
 - Derived from Git SHA1 release.
 
 For example:
+
 ```
 Request: /57cb6492897bd7b7/css/style.css
 Rewrite: /css/style.css
